@@ -50,12 +50,16 @@ void MainWindow::createActions()
     m_viewActionGroup = new QActionGroup(this);
     m_maximizedAction = new QAction("Maximized");
     m_maximizedAction->setCheckable(true);
+    m_maximizedAction->setStatusTip(QString("Maximized the view"));
     m_minminizedAction = new QAction("Minminized");
     m_minminizedAction->setCheckable(true);
+    m_minminizedAction->setStatusTip(QString("Mininized the view"));
     m_normalAction = new QAction("Normal");
     m_normalAction->setCheckable(true);
+    m_normalAction->setStatusTip(QString("Show the normal view"));
     m_toggleFullScreenAction = new QAction("Full Screen");
     m_toggleFullScreenAction->setCheckable(true);
+    m_toggleFullScreenAction->setStatusTip(QString("Toggle the view fullscreen"));
     m_viewActionGroup->addAction(m_maximizedAction);
     connect(m_maximizedAction, &QAction::toggled, [=]() { if(m_maximizedAction->isChecked()) showMaximized(); m_lastwindowstate = LastWindowState::L_MAXIMIZED;});
     m_viewActionGroup->addAction(m_minminizedAction);
