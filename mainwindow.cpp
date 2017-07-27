@@ -59,7 +59,7 @@ void MainWindow::createActions()
     m_viewActionGroup->addAction(m_maximizedAction);
     connect(m_maximizedAction, &QAction::toggled, [=]() { if(m_maximizedAction->isChecked()) showMaximized(); m_lastwindowstate = LastWindowState::L_MAXIMIZED;});
     m_viewActionGroup->addAction(m_minminizedAction);
-    connect(m_minminizedAction, &QAction::toggled, [=]() { if(m_minminizedAction->isChecked()) showMinimized();
+    connect(m_minminizedAction, &QAction::toggled, [=]() { if(m_minminizedAction->isChecked())
         switch (m_lastwindowstate) {
         case L_NORMAL:
             m_normalAction->setChecked(true);
@@ -72,7 +72,9 @@ void MainWindow::createActions()
             break;
         default:
             break;
-        }});
+        }
+        showMinimized();
+    });
     m_viewActionGroup->addAction(m_normalAction);
     connect(m_normalAction, &QAction::toggled, [=]() { if(m_normalAction->isChecked()) showNormal(); m_lastwindowstate = LastWindowState::L_NORMAL;} );
     m_viewActionGroup->addAction(m_toggleFullScreenAction);
