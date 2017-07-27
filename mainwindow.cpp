@@ -37,11 +37,47 @@ void MainWindow::initUI()
 
 void MainWindow::createActions()
 {
-    //m_mainfileGroup = new QActionGroup(this);
+    //filemenu
     m_newfileAction = new QAction("New File");
+    m_newfileAction->setStatusTip(QString("Create a new file"));
     m_openfileAction = new QAction("Open File");
+    m_openfileAction->setStatusTip(QString("Open a file"));
     m_exitAction = new QAction("Exit");
+    m_exitAction->setStatusTip(QString("Exit the application"));
+    connect(m_exitAction, &QAction::triggered, [=](){ qApp->exit();});
+
+    //viewmenu
+    m_viewActionGroup = new QActionGroup(this);
+    m_maximizedAction = new QAction("Maximized");
+    m_maximizedAction->setCheckable(true);
+    m_minminizedAction = new QAction("Minminized");
+    m_minminizedAction->setCheckable(true);
+    m_normalAction = new QAction("Normal");
+    m_normalAction->setCheckable(true);
     m_toggleFullScreenAction = new QAction("Full Screen");
+    m_toggleFullScreenAction->setCheckable(true);
+    m_viewActionGroup->addAction(m_maximizedAction);
+    connect(m_maximizedAction, &QAction::toggled, [=]() { if(m_maximizedAction->isChecked()) showMaximized(); m_lastwindowstate = LastWindowState::L_MAXIMIZED;});
+    m_viewActionGroup->addAction(m_minminizedAction);
+    connect(m_minminizedAction, &QAction::toggled, [=]() { if(m_minminizedAction->isChecked()) showMinimized();
+        switch (m_lastwindowstate) {
+        case L_NORMAL:
+            m_normalAction->setChecked(true);
+            break;
+        case L_MAXIMIZED:
+            m_maximizedAction->setChecked(true);
+            break;
+        case L_FULLSCREEN:
+            m_toggleFullScreenAction->setChecked(true);
+            break;
+        default:
+            break;
+        }});
+    m_viewActionGroup->addAction(m_normalAction);
+    connect(m_normalAction, &QAction::toggled, [=]() { if(m_normalAction->isChecked()) showNormal(); m_lastwindowstate = LastWindowState::L_NORMAL;} );
+    m_viewActionGroup->addAction(m_toggleFullScreenAction);
+    connect(m_toggleFullScreenAction, &QAction::toggled, [=]() { if(m_toggleFullScreenAction->isChecked()) showFullScreen(); m_lastwindowstate = LastWindowState::L_FULLSCREEN; });
+    m_normalAction->setChecked(true);
 }
 
 void MainWindow::createMenus()
@@ -49,28 +85,25 @@ void MainWindow::createMenus()
     createActions();
     m_mainMenuBar = new QMenuBar(this);
     setMenuBar(m_mainMenuBar);
+
     m_fileMenu = new QMenu("File");
     m_mainMenuBar->addMenu(m_fileMenu);
-    m_fileMenu->addAction(m_newfileAction);
-    m_newfileAction->setStatusTip(QString("Create a new file"));
-    //connect(m_newfileAction, &QAction::hovered, [=](){ m_tooltipLabel->setText(QString("Create a new file")); });
-    m_fileMenu->addAction(m_openfileAction);
-    m_openfileAction->setStatusTip(QString("Open a file"));
+    m_fileMenu->addAction(m_newfileAction);    
+    m_fileMenu->addAction(m_openfileAction);    
     m_fileMenu->addSeparator();
     m_fileMenu->addAction(m_exitAction);
-    m_exitAction->setStatusTip(QString("Exit the application"));
-    connect(m_exitAction, &QAction::triggered, [=](){ qApp->exit();});
+
+
     m_editMenu = new QMenu("Edit");
     m_mainMenuBar->addMenu(m_editMenu);
+
     m_viewMenu = new QMenu("View");
     m_mainMenuBar->addMenu(m_viewMenu);
+    m_viewMenu->addAction(m_maximizedAction);
+    m_viewMenu->addAction(m_minminizedAction);
+    m_viewMenu->addAction(m_normalAction);
     m_viewMenu->addAction(m_toggleFullScreenAction);
-    m_toggleFullScreenAction->setCheckable(true);
-    m_toggleFullScreenAction->setChecked(false);
-    connect(m_toggleFullScreenAction, &QAction::toggled, [=]() {
-        if(m_toggleFullScreenAction->isChecked() == true) showFullScreen();
-        if(m_toggleFullScreenAction->isChecked() == false) showNormal();
-    });
+
     m_helpMenu = new QMenu("Help");
     m_mainMenuBar->addMenu(m_helpMenu);
 }

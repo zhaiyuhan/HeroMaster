@@ -12,6 +12,9 @@
 #include <QActionGroup>
 #include <QAction>
 #include <QLayout>
+
+
+
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
@@ -26,19 +29,30 @@ private:
     void createMenus();
     QMenuBar *m_mainMenuBar;
     QMenu *m_fileMenu;
-    //QActionGroup *m_mainfileGroup;
     QAction *m_newfileAction;
     QAction *m_openfileAction;
     QAction *m_exitAction;
     QMenu *m_editMenu;
 
     QMenu *m_viewMenu;
-    //QActionGroup *m_mainfileGroup;
+    QActionGroup *m_viewActionGroup;
+
+    QAction *m_maximizedAction;
+    QAction *m_minminizedAction;
+    QAction *m_normalAction;
     QAction *m_toggleFullScreenAction;
     QMenu *m_helpMenu;
 
     QPushButton *m_ConsoleButton;
     QLabel *m_tooltipLabel;
+
+    enum LastWindowState{
+        L_NORMAL,
+        L_MIINIMIZED,
+        L_MAXIMIZED,
+        L_FULLSCREEN
+    };
+    LastWindowState m_lastwindowstate;
 };
 
 #endif // MAINWINDOW_H
