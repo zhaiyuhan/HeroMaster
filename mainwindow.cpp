@@ -14,6 +14,7 @@ MainWindow::~MainWindow()
 void MainWindow::setupUI()
 {
     createMenus();
+    createToolBar();
     statusBar();
     statusBar()->setSizeGripEnabled(false);
     statusBar()->setStyleSheet(QString("QStatusBar::item{border:0px}"));
@@ -29,6 +30,7 @@ void MainWindow::initUI()
 {
     setWindowTitle("HeroMaster 2000");
     setMinimumSize(QSize(800,600));
+    setWindowIcon(QIcon(":/king.png"));
     QDesktopWidget *desktop = QApplication::desktop();
     move((desktop->width()-this->width())/2,(desktop->height()-this->height())/2);
     setupUI();
@@ -84,6 +86,10 @@ void MainWindow::createActions()
     m_viewActionGroup->addAction(m_toggleFullScreenAction);
     connect(m_toggleFullScreenAction, &QAction::toggled, [=]() { if(m_toggleFullScreenAction->isChecked()) showFullScreen(); m_lastwindowstate = LastWindowState::L_FULLSCREEN; });
     m_normalAction->setChecked(true);
+
+    //helpmenu
+    m_openAboutViewAction = new QAction("About");
+    connect(m_openAboutViewAction, &QAction::triggered, [=]() { AboutView *_aboutview = new AboutView(); _aboutview->exec(); });
 }
 
 void MainWindow::createMenus()
@@ -112,4 +118,16 @@ void MainWindow::createMenus()
 
     m_helpMenu = new QMenu("Help");
     m_mainMenuBar->addMenu(m_helpMenu);
+    m_helpMenu->addAction(m_openAboutViewAction);
+}
+
+void MainWindow::createToolBar()
+{
+    m_mainToolBar = new QToolBar("File",this);
+    addToolBar(m_mainToolBar);
+    m_mainToolBar->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
+    m_TnewfileAction = new QAction(QIcon(":/ToolBarIcons/NewFile.png"),QString("Create New File"),this);
+    m_mainToolBar->addAction(m_TnewfileAction);
+    m_TopenfileAction = new QAction(QIcon("://ToolBarIcons/file.png"),QString("OpenFile"),this);
+    m_mainToolBar->addAction(m_TopenfileAction);
 }

@@ -25,7 +25,16 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-        mainwindow.cpp
+        mainwindow.cpp \
+    View/AboutView/AboutView.cpp
 
 HEADERS += \
-        mainwindow.h
+        mainwindow.h \
+    View/AboutView/AboutView.h
+
+RESOURCES += \
+    Resources/toolbaricons.qrc \
+    Resources/basic.qrc
+
+FORMS += \
+    View/AboutView/AboutView.ui

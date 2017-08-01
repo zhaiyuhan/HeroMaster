@@ -1,1 +1,9 @@
-<RCC/>
+<RCC>
+    <qresource prefix="/">
+        <file>ToolBarIcons/file.png</file>
+        <file>ToolBarIcons/NewFile.png</file>
+    </qresource>
+    <qresource prefix="/AboutView">
+        <file>AboutView/About.html</file>
+    </qresource>
+</RCC>

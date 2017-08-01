@@ -4,15 +4,19 @@
 #include <QMainWindow>
 #include <QApplication>
 #include <QDesktopWidget>
+#include <QToolBar>
+#include <QMenuBar>
+#include <QMenu>
 #include <QStatusBar>
 #include <QPushButton>
 #include <QLabel>
-#include <QMenuBar>
-#include <QMenu>
 #include <QActionGroup>
 #include <QAction>
 #include <QLayout>
+#include <QEvent>
+#include <QShowEvent>
 
+#include "View/AboutView/AboutView.h"
 
 
 class MainWindow : public QMainWindow
@@ -27,7 +31,8 @@ private:
     void initUI();
     void createActions();
     void createMenus();
-    QMenuBar *m_mainMenuBar;
+    void createToolBar();
+    QMenuBar *m_mainMenuBar;    
     QMenu *m_fileMenu;
     QAction *m_newfileAction;
     QAction *m_openfileAction;
@@ -36,12 +41,17 @@ private:
 
     QMenu *m_viewMenu;
     QActionGroup *m_viewActionGroup;
-
     QAction *m_maximizedAction;
     QAction *m_minminizedAction;
     QAction *m_normalAction;
     QAction *m_toggleFullScreenAction;
+
     QMenu *m_helpMenu;
+    QAction *m_openAboutViewAction;
+
+    QToolBar *m_mainToolBar;
+    QAction *m_TnewfileAction;
+    QAction *m_TopenfileAction;
 
     QPushButton *m_ConsoleButton;
     QLabel *m_tooltipLabel;
