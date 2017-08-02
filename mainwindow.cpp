@@ -39,7 +39,7 @@ void MainWindow::setupUI()
 void MainWindow::initUI()
 {
     setWindowTitle("HeroMaster 2000");
-    setMinimumSize(QSize(800,600));
+    setMinimumSize(QSize(1024,768));
     setWindowIcon(QIcon(":/king.png"));
     QDesktopWidget *desktop = QApplication::desktop();
     move((desktop->width()-this->width())/2,(desktop->height()-this->height())/2);
@@ -97,6 +97,9 @@ void MainWindow::createActions()
     m_normalAction->setChecked(true);
 
     //helpmenu
+    m_openhelpAction = new QAction("Help");
+    m_openhelpAction->setStatusTip(QString("Open the help view"));
+    connect(m_openhelpAction, &QAction::triggered, [=]() { HelpView *_helpview = new HelpView(this); _helpview->exec(); });
     m_openAboutViewAction = new QAction("About");
     m_openAboutViewAction->setStatusTip(QString("Open the about view"));
     connect(m_openAboutViewAction, &QAction::triggered, [=]() { AboutView *_aboutview = new AboutView(); _aboutview->exec(); });
@@ -128,6 +131,8 @@ void MainWindow::createMenus()
 
     m_helpMenu = new QMenu("Help", this);
     m_mainMenuBar->addMenu(m_helpMenu);
+    m_helpMenu->addAction(m_openhelpAction);
+    m_helpMenu->addSeparator();
     m_helpMenu->addAction(m_openAboutViewAction);
 }
 
@@ -146,6 +151,10 @@ void MainWindow::createDockWindows()
 {
     m_fileDockWidget = new QDockWidget("File Browser", this);
     this->addDockWidget(Qt::LeftDockWidgetArea, m_fileDockWidget);
+    m_filebrowser = new FileBrowser(this);
+    m_fileDockWidget->setWidget(m_filebrowser);
     m_outputDockWidget = new QDockWidget("Output", this);
     this->addDockWidget(Qt::BottomDockWidgetArea, m_outputDockWidget);
+    m_infoDockWidget = new QDockWidget("Information", this);
+    this->addDockWidget(Qt::RightDockWidgetArea, m_infoDockWidget);
 }

@@ -18,7 +18,9 @@
 #include <QShowEvent>
 
 #include "View/AboutView/AboutView.h"
+#include "View/HelpView.h"
 #include "CustomView/MainView.h"
+#include "CustomView/FileBrowser.h"
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
@@ -48,6 +50,7 @@ private:
     QAction *m_toggleFullScreenAction;
 
     QMenu *m_helpMenu;
+    QAction *m_openhelpAction;
     QAction *m_openAboutViewAction;
 
     QToolBar *m_mainToolBar;
@@ -66,7 +69,10 @@ private:
 
     MainView *m_mainview;
     QDockWidget *m_fileDockWidget;
+    QDockWidget *m_infoDockWidget;
     QDockWidget *m_outputDockWidget;
+
+    FileBrowser *m_filebrowser;
 
 };
 

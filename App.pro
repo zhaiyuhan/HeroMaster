@@ -28,18 +28,25 @@ SOURCES += \
         mainwindow.cpp \
     View/AboutView/AboutView.cpp \
     Foundation/CustomShadowEffect.cpp \
-    CustomView/MainView.cpp
+    CustomView/MainView.cpp \
+    CustomView/FileBrowser.cpp \
+    View/HelpView.cpp
 
 HEADERS += \
         mainwindow.h \
     View/AboutView/AboutView.h \
     Foundation/CustomShadowEffect.h \
-    CustomView/MainView.h
+    CustomView/MainView.h \
+    CustomView/FileBrowser.h \
+    View/HelpView.h
 
 
 RESOURCES += \
     Resources/toolbaricons.qrc \
-    Resources/basic.qrc
+    Resources/basic.qrc \
+    Resources/dockwidget.qrc \
+    Resources/combobox.qrc
 
 FORMS += \
-    View/AboutView/AboutView.ui
+    View/AboutView/AboutView.ui \
+    View/HelpView.ui
