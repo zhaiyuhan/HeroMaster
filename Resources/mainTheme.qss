@@ -1,10 +1,60 @@
 QPushButton {
-        text-align: center center;
-        padding-left: 3px;
+    background-color: #ffffff;
+    border: 1px solid;
+    border-top-color: #c8c8c8;
+    border-bottom-color: #acacac;
+    border-left-color: #c2c2c2;
+    border-right-color: #c2c2c2;
+    border-radius: 5px;
+    padding: 4px;
 }
-QPushButton::menu-indicator {
-        subcontrol-position: right center;
-        subcontrol-origin: padding;
-        padding-right: 3px;
-        /* image: none; */
+
+QPushButton:hover {
+
 }
+
+QPushButton:pressed {
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,stop: 0 #4c98fe, stop: 1 #0564e3);
+    border-top-color: #247fff;
+    border-bottom-color: #003ddb;
+    border-left-color: #125eed;
+    border-right-color: #125eed;
+    color: rgba(255, 255, 255, 90%);
+}
+
+QPushButton:disabled {
+    color: #333333;
+}
+
+QMenuBar {
+        background: rgb(57, 58, 60);
+        border: none;
+}
+QMenuBar::item {
+        padding: 5px 10px 5px 10px;
+        background: transparent;
+}
+QMenuBar::item:enabled {
+        color: rgb(227, 234, 242);
+}
+QMenuBar::item:!enabled {
+        color: rgb(155, 155, 155);
+}
+QMenuBar::item:enabled:selected {
+        background: rgba(255, 255, 255, 40);
+}
+
+QMenu {
+      background-color: #FFFFFF;
+      border: 1px solid white;
+  }
+
+QMenu::item {
+      background-color: transparent;
+      padding:4px 55px;
+      margin:3px 0px;
+  }
+
+QMenu::item:selected {
+      background-color: #2979FF;
+  }

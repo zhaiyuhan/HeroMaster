@@ -3,6 +3,12 @@
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
 {
+    QFile maintheme(":/mainTheme.qss");
+    if(maintheme.open(QFile::ReadOnly))
+    {
+        QString style = QLatin1String(maintheme.readAll());
+        this->setStyleSheet(style);
+    }
     initUI();
 }
 
