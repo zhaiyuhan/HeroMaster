@@ -2,6 +2,7 @@
 #define ABOUTVIEW_H
 
 #include <QDialog>
+#include "Foundation/CustomShadowEffect.h"
 
 namespace Ui {
 class AboutView;

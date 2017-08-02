@@ -24,6 +24,12 @@ AboutView::AboutView(QWidget *parent) :
     QTextStream in(&file);
     ui->textBrowser->insertHtml(in.readAll());
     connect(ui->pushButton, &QPushButton::clicked, [=]() { this->close();});
+    CustomShadowEffect *bodyShadow = new CustomShadowEffect();
+    bodyShadow->setBlurRadius(20.0);
+    bodyShadow->setDistance(6.0);
+    bodyShadow->setColor(QColor(21, 25, 30, 60));
+    ui->textBrowser->setAutoFillBackground(true);
+    ui->textBrowser->setGraphicsEffect(bodyShadow);
 }
 
 AboutView::~AboutView()

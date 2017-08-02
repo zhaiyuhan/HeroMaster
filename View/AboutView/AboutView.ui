@@ -37,6 +37,10 @@
   <property name="windowTitle">
    <string>About HeroMaster</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="../../Resources/toolbaricons.qrc">
+    <normaloff>:/AboutView/AboutView/about.png</normaloff>:/AboutView/AboutView/about.png</iconset>
+  </property>
   <layout class="QVBoxLayout" name="verticalLayout_2">
    <item>
     <layout class="QVBoxLayout" name="verticalLayout">
@@ -88,6 +92,8 @@
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="../../Resources/toolbaricons.qrc"/>
+ </resources>
  <connections/>
 </ui>

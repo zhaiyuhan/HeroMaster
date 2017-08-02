@@ -9,6 +9,9 @@ QWidget
     outline: 0;
 }
 
+QWidget#centerWidget {
+    background-color: #15191e;
+}
 QPushButton {
     background-color: transparent;
     border: 1px solid;
@@ -36,11 +39,13 @@ QPushButton:disabled {
 
 QMenuBar {
         background-color: #232c33;
-        border: none;
+        border: 1px solid 1519e;
 }
 QMenuBar::item {
         padding: 5px 10px 5px 10px;
+        spacing: 3px;
         background: transparent;
+        border-radius: 4px;
 }
 QMenuBar::item:enabled {
         color: rgb(227, 234, 242);
@@ -53,22 +58,19 @@ QMenuBar::item:enabled:selected {
 }
 
 QMenu {
-        border: 1px solid rgb(100, 100, 100);
-        background: rgb(68, 69, 73);
+      background-color: #232c33;
+      border: 1px solid 1519e;
 }
 QMenu::item {
-        height: 22px;
-        padding: 0px 25px 0px 20px;
+      background-color: transparent;
+      padding:4px 30px;
+      margin:3px 0px;
 }
-QMenu::item:enabled {
-        color: rgb(225, 225, 225);
+QMenu::item:selected {
+      background-color: #396895;
 }
 QMenu::item:!enabled {
         color: rgb(155, 155, 155);
-}
-QMenu::item:enabled:selected {
-        color: rgb(230, 230, 230);
-        background: rgba(255, 255, 255, 40);
 }
 QMenu::separator {
         height: 1px;
@@ -81,6 +83,10 @@ QMenu::indicator {
 QMenu::icon {
         padding-left: 2px;
         padding-right: 2px;
+}
+
+QToolBar::handle {
+      image: none;
 }
 
 QTextBrowser {

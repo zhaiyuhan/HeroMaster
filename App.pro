@@ -26,11 +26,16 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += \
         main.cpp \
         mainwindow.cpp \
-    View/AboutView/AboutView.cpp
+    View/AboutView/AboutView.cpp \
+    Foundation/CustomShadowEffect.cpp \
+    CustomView/MainView.cpp
 
 HEADERS += \
         mainwindow.h \
-    View/AboutView/AboutView.h
+    View/AboutView/AboutView.h \
+    Foundation/CustomShadowEffect.h \
+    CustomView/MainView.h
+
 
 RESOURCES += \
     Resources/toolbaricons.qrc \

@@ -3,6 +3,7 @@
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
 {
+    m_mainview = new MainView(this);
     QFile maintheme(":/mainTheme.qss");
     if(maintheme.open(QFile::ReadOnly))
     {
@@ -22,15 +23,17 @@ void MainWindow::setupUI()
 {
     createMenus();
     createToolBar();
+    createDockWindows();
     statusBar();
     statusBar()->setSizeGripEnabled(false);
     statusBar()->setStyleSheet(QString("QStatusBar::item{border:0px}"));
     m_ConsoleButton = new QPushButton("No Result",this);
     m_ConsoleButton->resize(QSize(40,20));
     m_ConsoleButton->setToolTip(QString("Click to know more"));
-    statusBar()->addWidget(m_ConsoleButton);
-    m_tooltipLabel = new QLabel(this);
-    statusBar()->addWidget(m_tooltipLabel);
+    statusBar()->addPermanentWidget(m_ConsoleButton);
+
+    this->setCentralWidget(m_mainview);
+
 }
 
 void MainWindow::initUI()
@@ -41,7 +44,6 @@ void MainWindow::initUI()
     QDesktopWidget *desktop = QApplication::desktop();
     move((desktop->width()-this->width())/2,(desktop->height()-this->height())/2);
     setupUI();
-
 }
 
 void MainWindow::createActions()
@@ -72,7 +74,7 @@ void MainWindow::createActions()
     m_viewActionGroup->addAction(m_maximizedAction);
     connect(m_maximizedAction, &QAction::toggled, [=]() { if(m_maximizedAction->isChecked()) showMaximized(); m_lastwindowstate = LastWindowState::L_MAXIMIZED;});
     m_viewActionGroup->addAction(m_minminizedAction);
-    connect(m_minminizedAction, &QAction::toggled, [=]() { if(m_minminizedAction->isChecked())
+    connect(m_minminizedAction, &QAction::toggled, [=]() { if(m_minminizedAction->isChecked()){
         switch (m_lastwindowstate) {
         case L_NORMAL:
             m_normalAction->setChecked(true);
@@ -86,7 +88,7 @@ void MainWindow::createActions()
         default:
             break;
         }
-        showMinimized();
+        showMinimized();}
     });
     m_viewActionGroup->addAction(m_normalAction);
     connect(m_normalAction, &QAction::toggled, [=]() { if(m_normalAction->isChecked()) showNormal(); m_lastwindowstate = LastWindowState::L_NORMAL;} );
@@ -96,6 +98,7 @@ void MainWindow::createActions()
 
     //helpmenu
     m_openAboutViewAction = new QAction("About");
+    m_openAboutViewAction->setStatusTip(QString("Open the about view"));
     connect(m_openAboutViewAction, &QAction::triggered, [=]() { AboutView *_aboutview = new AboutView(); _aboutview->exec(); });
 }
 
@@ -105,7 +108,7 @@ void MainWindow::createMenus()
     m_mainMenuBar = new QMenuBar(this);
     setMenuBar(m_mainMenuBar);
 
-    m_fileMenu = new QMenu("File");
+    m_fileMenu = new QMenu("File", this);
     m_mainMenuBar->addMenu(m_fileMenu);
     m_fileMenu->addAction(m_newfileAction);    
     m_fileMenu->addAction(m_openfileAction);    
@@ -113,17 +116,17 @@ void MainWindow::createMenus()
     m_fileMenu->addAction(m_exitAction);
 
 
-    m_editMenu = new QMenu("Edit");
+    m_editMenu = new QMenu("Edit", this);
     m_mainMenuBar->addMenu(m_editMenu);
 
-    m_viewMenu = new QMenu("View");
+    m_viewMenu = new QMenu("View", this);
     m_mainMenuBar->addMenu(m_viewMenu);
     m_viewMenu->addAction(m_maximizedAction);
     m_viewMenu->addAction(m_minminizedAction);
     m_viewMenu->addAction(m_normalAction);
     m_viewMenu->addAction(m_toggleFullScreenAction);
 
-    m_helpMenu = new QMenu("Help");
+    m_helpMenu = new QMenu("Help", this);
     m_mainMenuBar->addMenu(m_helpMenu);
     m_helpMenu->addAction(m_openAboutViewAction);
 }
@@ -137,4 +140,12 @@ void MainWindow::createToolBar()
     m_mainToolBar->addAction(m_TnewfileAction);
     m_TopenfileAction = new QAction(QIcon("://ToolBarIcons/file.png"),QString("OpenFile"),this);
     m_mainToolBar->addAction(m_TopenfileAction);
+}
+
+void MainWindow::createDockWindows()
+{
+    m_fileDockWidget = new QDockWidget("File Browser", this);
+    this->addDockWidget(Qt::LeftDockWidgetArea, m_fileDockWidget);
+    m_outputDockWidget = new QDockWidget("Output", this);
+    this->addDockWidget(Qt::BottomDockWidgetArea, m_outputDockWidget);
 }

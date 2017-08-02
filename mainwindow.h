@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QApplication>
 #include <QDesktopWidget>
+#include <QDockWidget>
 #include <QToolBar>
 #include <QMenuBar>
 #include <QMenu>
@@ -17,8 +18,7 @@
 #include <QShowEvent>
 
 #include "View/AboutView/AboutView.h"
-
-
+#include "CustomView/MainView.h"
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
@@ -32,6 +32,7 @@ private:
     void createActions();
     void createMenus();
     void createToolBar();
+    void createDockWindows();
     QMenuBar *m_mainMenuBar;    
     QMenu *m_fileMenu;
     QAction *m_newfileAction;
@@ -54,7 +55,6 @@ private:
     QAction *m_TopenfileAction;
 
     QPushButton *m_ConsoleButton;
-    QLabel *m_tooltipLabel;
 
     enum LastWindowState{
         L_NORMAL,
@@ -63,6 +63,11 @@ private:
         L_FULLSCREEN
     };
     LastWindowState m_lastwindowstate;
+
+    MainView *m_mainview;
+    QDockWidget *m_fileDockWidget;
+    QDockWidget *m_outputDockWidget;
+
 };
 
 #endif // MAINWINDOW_H
