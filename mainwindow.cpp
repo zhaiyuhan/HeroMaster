@@ -8,6 +8,7 @@ MainWindow::MainWindow(QWidget *parent)
     {
         QString style = QLatin1String(maintheme.readAll());
         this->setStyleSheet(style);
+        maintheme.close();
     }
     initUI();
 }

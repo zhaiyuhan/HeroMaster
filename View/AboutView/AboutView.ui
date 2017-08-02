@@ -43,7 +43,7 @@
      <item alignment="Qt::AlignHCenter">
       <widget class="QLabel" name="label">
        <property name="text">
-        <string>Hreo Master 2000</string>
+        <string>Hero Master 2000</string>
        </property>
       </widget>
      </item>

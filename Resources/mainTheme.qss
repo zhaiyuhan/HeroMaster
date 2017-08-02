@@ -1,16 +1,25 @@
+QWidget
+{
+    color: #eff0f1;
+    background-color: #29323b;
+    selection-background-color:#3daee9;
+    selection-color: #eff0f1;
+    background-clip: border;
+    border-image: none;
+    outline: 0;
+}
+
 QPushButton {
-    background-color: #ffffff;
+    background-color: transparent;
     border: 1px solid;
-    border-top-color: #c8c8c8;
-    border-bottom-color: #acacac;
-    border-left-color: #c2c2c2;
-    border-right-color: #c2c2c2;
+    border-color: #1E90FF;
     border-radius: 5px;
     padding: 4px;
+    color: rgba(255, 255, 255, 90%);
 }
 
 QPushButton:hover {
-
+    border-color: #396895;
 }
 
 QPushButton:pressed {
@@ -19,7 +28,6 @@ QPushButton:pressed {
     border-bottom-color: #003ddb;
     border-left-color: #125eed;
     border-right-color: #125eed;
-    color: rgba(255, 255, 255, 90%);
 }
 
 QPushButton:disabled {
@@ -27,7 +35,7 @@ QPushButton:disabled {
 }
 
 QMenuBar {
-        background: rgb(57, 58, 60);
+        background-color: #232c33;
         border: none;
 }
 QMenuBar::item {
@@ -45,16 +53,38 @@ QMenuBar::item:enabled:selected {
 }
 
 QMenu {
-      background-color: #FFFFFF;
-      border: 1px solid white;
-  }
-
+        border: 1px solid rgb(100, 100, 100);
+        background: rgb(68, 69, 73);
+}
 QMenu::item {
-      background-color: transparent;
-      padding:4px 55px;
-      margin:3px 0px;
-  }
+        height: 22px;
+        padding: 0px 25px 0px 20px;
+}
+QMenu::item:enabled {
+        color: rgb(225, 225, 225);
+}
+QMenu::item:!enabled {
+        color: rgb(155, 155, 155);
+}
+QMenu::item:enabled:selected {
+        color: rgb(230, 230, 230);
+        background: rgba(255, 255, 255, 40);
+}
+QMenu::separator {
+        height: 1px;
+        background: rgb(100, 100, 100);
+}
+QMenu::indicator {
+        width: 13px;
+        height: 13px;
+}
+QMenu::icon {
+        padding-left: 2px;
+        padding-right: 2px;
+}
 
-QMenu::item:selected {
-      background-color: #2979FF;
-  }
+QTextBrowser {
+   background-color: #384552;
+   border: 1px solid;
+   border-color: transparent;
+}

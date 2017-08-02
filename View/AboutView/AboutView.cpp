@@ -8,6 +8,13 @@ AboutView::AboutView(QWidget *parent) :
     ui(new Ui::AboutView)
 {
     ui->setupUi(this);
+    QFile maintheme(":/mainTheme.qss");
+    if(maintheme.open(QFile::ReadOnly))
+    {
+        QString style = QLatin1String(maintheme.readAll());
+        this->setStyleSheet(style);
+        maintheme.close();
+    }
     QString filename = QString(":/AboutView/AboutView/About.html");
     QFile file(filename);
     if (!file.open(QFile::ReadOnly | QFile::Text)){
