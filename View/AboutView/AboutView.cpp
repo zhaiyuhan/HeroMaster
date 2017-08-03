@@ -1,28 +1,22 @@
 #include "AboutView.h"
 #include "ui_AboutView.h"
-#include <QFile>
-#include <QTextStream>
-#include <QMessageBox>
+//#include <QFile>
+//#include <QTextStream>
+//#include <QMessageBox>
 AboutView::AboutView(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::AboutView)
 {
     ui->setupUi(this);
-    QFile maintheme(":/mainTheme.qss");
-    if(maintheme.open(QFile::ReadOnly))
-    {
-        QString style = QLatin1String(maintheme.readAll());
-        this->setStyleSheet(style);
-        maintheme.close();
-    }
-    QString filename = QString(":/AboutView/AboutView/About.html");
+    /*QString filename = QString(":/AboutView/AboutView/About.html");
     QFile file(filename);
     if (!file.open(QFile::ReadOnly | QFile::Text)){
         QMessageBox::warning(this, "Application Error", tr("Cannot read file %1:\n%2.").arg(filename).arg(file.errorString()));
          return;
     }
     QTextStream in(&file);
-    ui->textBrowser->insertHtml(in.readAll());
+    ui->textBrowser->insertHtml(in.readAll());*/
+    ui->textBrowser->setSource(QUrl("qrc:/AboutView/AboutView/About.html"));
     connect(ui->pushButton, &QPushButton::clicked, [=]() { this->close();});
     CustomShadowEffect *bodyShadow = new CustomShadowEffect();
     bodyShadow->setBlurRadius(20.0);

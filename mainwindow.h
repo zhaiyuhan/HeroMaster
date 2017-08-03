@@ -21,6 +21,8 @@
 #include "View/HelpView.h"
 #include "CustomView/MainView.h"
 #include "CustomView/FileBrowser.h"
+#include "CustomView/Plane/OutPutPlane.h"
+#include "CustomView/Plane/InformationPlane.h"
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
@@ -28,6 +30,7 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = 0);
     ~MainWindow();
+
 private:
     void setupUI();
     void initUI();
@@ -35,6 +38,7 @@ private:
     void createMenus();
     void createToolBar();
     void createDockWindows();
+
     QMenuBar *m_mainMenuBar;    
     QMenu *m_fileMenu;
     QAction *m_newfileAction;
@@ -73,6 +77,8 @@ private:
     QDockWidget *m_outputDockWidget;
 
     FileBrowser *m_filebrowser;
+    OutPutPlane *m_outputplane;
+    InformationPlane *m_informationplae;
 
 };
 

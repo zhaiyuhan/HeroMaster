@@ -2,5 +2,7 @@
     <qresource prefix="/">
         <file>king.png</file>
         <file>mainTheme.qss</file>
+        <file>iconfont.ico</file>
+        <file>psd.jpg</file>
     </qresource>
 </RCC>

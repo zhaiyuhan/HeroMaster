@@ -30,7 +30,9 @@ SOURCES += \
     Foundation/CustomShadowEffect.cpp \
     CustomView/MainView.cpp \
     CustomView/FileBrowser.cpp \
-    View/HelpView.cpp
+    View/HelpView.cpp \
+    CustomView/Plane/OutPutPlane.cpp \
+    CustomView/Plane/InformationPlane.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -38,7 +40,9 @@ HEADERS += \
     Foundation/CustomShadowEffect.h \
     CustomView/MainView.h \
     CustomView/FileBrowser.h \
-    View/HelpView.h
+    View/HelpView.h \
+    CustomView/Plane/OutPutPlane.h \
+    CustomView/Plane/InformationPlane.h
 
 
 RESOURCES += \

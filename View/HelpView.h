@@ -15,6 +15,9 @@ public:
     explicit HelpView(QWidget *parent = 0);
     ~HelpView();
 
+private slots:
+    void on_label_linkActivated(const QString &link);
+
 private:
     Ui::HelpView *ui;
 };

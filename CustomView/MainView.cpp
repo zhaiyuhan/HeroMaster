@@ -8,13 +8,13 @@ MainView::MainView(QWidget *parent) : QWidget(parent)
 void MainView::setupUI()
 {
     m_textviewButton = new QPushButton("Text View", this);
-    m_textviewButton->setFixedSize(160, 30);
+    m_textviewButton->setFixedSize(150, 30);
     m_audioviewButton = new QPushButton("Audio View", this);
-    m_audioviewButton->setFixedSize(160, 30);
+    m_audioviewButton->setFixedSize(150, 30);
     m_videoviewButton = new QPushButton("Video View", this);
-    m_videoviewButton->setFixedSize(160, 30);
+    m_videoviewButton->setFixedSize(150, 30);
     m_cameraviewButton = new QPushButton("Camera View", this);
-    m_cameraviewButton->setFixedSize(160, 30);
+    m_cameraviewButton->setFixedSize(150, 30);
     m_mainStackedWidget = new QStackedWidget(this);
 }
 

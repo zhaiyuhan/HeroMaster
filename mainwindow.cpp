@@ -102,7 +102,7 @@ void MainWindow::createActions()
     connect(m_openhelpAction, &QAction::triggered, [=]() { HelpView *_helpview = new HelpView(this); _helpview->exec(); });
     m_openAboutViewAction = new QAction("About");
     m_openAboutViewAction->setStatusTip(QString("Open the about view"));
-    connect(m_openAboutViewAction, &QAction::triggered, [=]() { AboutView *_aboutview = new AboutView(); _aboutview->exec(); });
+    connect(m_openAboutViewAction, &QAction::triggered, [=]() { AboutView *_aboutview = new AboutView(this); _aboutview->exec(); });
 }
 
 void MainWindow::createMenus()
@@ -153,8 +153,20 @@ void MainWindow::createDockWindows()
     this->addDockWidget(Qt::LeftDockWidgetArea, m_fileDockWidget);
     m_filebrowser = new FileBrowser(this);
     m_fileDockWidget->setWidget(m_filebrowser);
+
     m_outputDockWidget = new QDockWidget("Output", this);
     this->addDockWidget(Qt::BottomDockWidgetArea, m_outputDockWidget);
+    m_outputplane = new OutPutPlane(this);
+    m_outputDockWidget->setWidget(m_outputplane);
+    m_outputplane->append("Start from: " + qApp->applicationFilePath());
+    QDateTime time = QDateTime::currentDateTime();
+    QString str = time.toString("yyyy-MM-dd hh:mm:ss ddd");
+    m_outputplane->append("Start at " + str);
+
     m_infoDockWidget = new QDockWidget("Information", this);
     this->addDockWidget(Qt::RightDockWidgetArea, m_infoDockWidget);
+    m_informationplae = new InformationPlane(this);
+    m_infoDockWidget->setWidget(m_informationplae);
 }
+
+
