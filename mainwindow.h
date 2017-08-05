@@ -19,6 +19,7 @@
 
 #include "View/AboutView/AboutView.h"
 #include "View/HelpView.h"
+#include "CustomView/ControlPlaneView.h"
 #include "CustomView/MainView.h"
 #include "CustomView/FileBrowser.h"
 #include "CustomView/Plane/OutPutPlane.h"
@@ -72,10 +73,12 @@ private:
     LastWindowState m_lastwindowstate;
 
     MainView *m_mainview;
+    QDockWidget *m_controlWidget;
     QDockWidget *m_fileDockWidget;
     QDockWidget *m_infoDockWidget;
     QDockWidget *m_outputDockWidget;
 
+    ControlPlaneView *m_controlPlaneView;
     FileBrowser *m_filebrowser;
     OutPutPlane *m_outputplane;
     InformationPlane *m_informationplae;

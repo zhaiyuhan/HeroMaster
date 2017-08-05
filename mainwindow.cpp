@@ -149,6 +149,11 @@ void MainWindow::createToolBar()
 
 void MainWindow::createDockWindows()
 {
+    m_controlWidget = new QDockWidget("Control Plane", this);
+    this->addDockWidget(Qt::TopDockWidgetArea, m_controlWidget);
+    m_controlPlaneView = new ControlPlaneView(this);
+    m_controlWidget->setWidget(m_controlPlaneView);
+
     m_fileDockWidget = new QDockWidget("File Browser", this);
     this->addDockWidget(Qt::LeftDockWidgetArea, m_fileDockWidget);
     m_filebrowser = new FileBrowser(this);

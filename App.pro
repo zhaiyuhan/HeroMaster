@@ -32,7 +32,12 @@ SOURCES += \
     CustomView/FileBrowser.cpp \
     View/HelpView.cpp \
     CustomView/Plane/OutPutPlane.cpp \
-    CustomView/Plane/InformationPlane.cpp
+    CustomView/Plane/InformationPlane.cpp \
+    CustomView/ControlPlaneView.cpp \
+    CustomView/Plane/PlaneForTextView.cpp \
+    CustomView/Plane/PlaneForAudioPlane.cpp \
+    CustomView/Plane/PlaneForVideoView.cpp \
+    CustomView/Plane/PlaneForCameraView.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -42,7 +47,12 @@ HEADERS += \
     CustomView/FileBrowser.h \
     View/HelpView.h \
     CustomView/Plane/OutPutPlane.h \
-    CustomView/Plane/InformationPlane.h
+    CustomView/Plane/InformationPlane.h \
+    CustomView/ControlPlaneView.h \
+    CustomView/Plane/PlaneForTextView.h \
+    CustomView/Plane/PlaneForAudioPlane.h \
+    CustomView/Plane/PlaneForVideoView.h \
+    CustomView/Plane/PlaneForCameraView.h
 
 
 RESOURCES += \
