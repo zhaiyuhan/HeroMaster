@@ -17,6 +17,11 @@ QStackedWidget {
   border-radius: 10px;
 }
 
+QStackedWidget#controlplane {
+  background-color: #15191e;
+  border-radius: 0px;
+}
+
 QDockWidget {
   border: 1px solid;
   border-color: #15191e;
@@ -434,4 +439,62 @@ QListView::item:hover {
   border: 1px solid rgba(57, 104, 149, 80%);
   border-radius: 4px;
   background-color: rgba(57, 104, 149, 50%);
+}
+
+QSlider {
+  border-color: #bcbcbc;
+}
+
+QSlider::groove:horizontal {
+  border: 1px solid #999999;
+  height: 1px;
+  margin: 0px 0;
+  left: 5px;
+  right: 5px;
+}
+
+QSlider::handle:horizontal {
+  border: 0px;
+  border-image: url(:/Basic/slider_thumb.png);
+  width: 15px;
+  margin: -7px -7px -7px -7px;
+}
+
+QSlider::handle:horizontal:hover {
+  border: 0px;
+  width: 15px;
+  margin: -7px -7px -7px -7px;
+  border-image: url(:/Basic/slider_thumb_hover.png);
+}
+
+QSlider::handle:horizontal:pressed {
+  border: 0px;
+  width: 15px;
+  margin: -7px -7px -7px -7px;
+  border-image: url(:/Basic/slider_thumb_pressed.png);
+}
+
+QSlider::add-page:horizontal {
+  background: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 #bcbcbc, stop:0.25 #bcbcbc, stop:0.5 #bcbcbc, stop:1 #bcbcbc);
+}
+
+QSlider::sub-page:horizontal {
+  background: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 #439cf3, stop:0.25 #439cf3, stop:0.5 #439cf3, stop:1 #439cf3);
+}
+
+QLineEdit {
+  border-radius: 4px;
+  border: 1px solid qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 #439cf3, stop:0.25 #439cf3, stop:0.5 #439cf3, stop:1 #439cf3);;
+  background-color: rgba(56 ,69, 82, 100%);
+  color: white;
+}
+
+QLineEdit:enabled {
+  color: white;
+}
+
+QLineEdit:enabled:hover, QLineEdit:enabled:focus {
+}
+
+QLineEdit:!enabled {
 }

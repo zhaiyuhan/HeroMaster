@@ -37,7 +37,9 @@ SOURCES += \
     CustomView/Plane/PlaneForTextView.cpp \
     CustomView/Plane/PlaneForAudioPlane.cpp \
     CustomView/Plane/PlaneForVideoView.cpp \
-    CustomView/Plane/PlaneForCameraView.cpp
+    CustomView/Plane/PlaneForCameraView.cpp \
+    Foundation/SearchLineEdit.cpp \
+    CustomView/AudioView.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -52,14 +54,16 @@ HEADERS += \
     CustomView/Plane/PlaneForTextView.h \
     CustomView/Plane/PlaneForAudioPlane.h \
     CustomView/Plane/PlaneForVideoView.h \
-    CustomView/Plane/PlaneForCameraView.h
+    CustomView/Plane/PlaneForCameraView.h \
+    Foundation/SearchLineEdit.h \
+    CustomView/AudioView.h
 
 
 RESOURCES += \
     Resources/toolbaricons.qrc \
     Resources/basic.qrc \
     Resources/dockwidget.qrc \
-    Resources/combobox.qrc
+    Resources/combobox.qrc \
 
 FORMS += \
     View/AboutView/AboutView.ui \

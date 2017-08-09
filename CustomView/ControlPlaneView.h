@@ -22,6 +22,8 @@ public slots:
 
 private:
     void setupUI();
+    void initLayout();
+    void initUI();
     QHBoxLayout *m_mainlayout;
     QStackedWidget *m_mainStackedWidget;
     PlaneForTextView *m_PlaneForTextView;

@@ -24,6 +24,7 @@
 #include "CustomView/FileBrowser.h"
 #include "CustomView/Plane/OutPutPlane.h"
 #include "CustomView/Plane/InformationPlane.h"
+#include "Foundation/SearchLineEdit.h"
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
@@ -61,6 +62,8 @@ private:
     QToolBar *m_mainToolBar;
     QAction *m_TnewfileAction;
     QAction *m_TopenfileAction;
+    SearchLineEdit *m_searchLineEdit;
+    QAction *m_toggleFullScreen2Action;
 
     QPushButton *m_ConsoleButton;
 

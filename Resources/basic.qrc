@@ -1,8 +1,16 @@
 <RCC>
     <qresource prefix="/">
-        <file>king.png</file>
+        <file>Basic/play.png</file>
         <file>mainTheme.qss</file>
         <file>iconfont.ico</file>
+        <file>king.png</file>
         <file>psd.jpg</file>
+        <file>Basic/previous.png</file>
+        <file>Basic/next.png</file>
+        <file>Basic/slider_thumb.png</file>
+        <file>Basic/slider_thumb_hover.png</file>
+        <file>Basic/slider_thumb_pressed.png</file>
+        <file>Basic/search.png</file>
+        <file>Basic/full-screen.png</file>
     </qresource>
 </RCC>

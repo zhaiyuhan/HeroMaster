@@ -141,10 +141,26 @@ void MainWindow::createToolBar()
     m_mainToolBar = new QToolBar("File",this);
     addToolBar(m_mainToolBar);
     m_mainToolBar->setToolButtonStyle(Qt::ToolButtonTextBesideIcon);
-    m_TnewfileAction = new QAction(QIcon(":/ToolBarIcons/NewFile.png"),QString("Create New File"),this);
+    m_TnewfileAction = new QAction(QIcon(":/ToolBarIcons/NewFile.png"), QString("Create New File"), this);
     m_mainToolBar->addAction(m_TnewfileAction);
-    m_TopenfileAction = new QAction(QIcon("://ToolBarIcons/file.png"),QString("OpenFile"),this);
+    m_TopenfileAction = new QAction(QIcon("://ToolBarIcons/file.png"), QString("OpenFile"), this);
     m_mainToolBar->addAction(m_TopenfileAction);
+    m_mainToolBar->addSeparator();
+    m_searchLineEdit = new SearchLineEdit(this);
+    m_searchLineEdit->setFixedWidth(200);
+    m_mainToolBar->addWidget(m_searchLineEdit);
+    m_toggleFullScreen2Action = new QAction(QIcon(":/Basic/full-screen.png"), QString(""), this);
+    m_mainToolBar->addAction(m_toggleFullScreen2Action);
+    connect(m_toggleFullScreen2Action, &QAction::triggered, [=]() {
+        if(windowState()!=Qt::WindowFullScreen) {
+            m_toggleFullScreenAction->setChecked(true);
+            showFullScreen();
+            m_lastwindowstate = LastWindowState::L_FULLSCREEN;
+        }else{
+            m_normalAction->setChecked(true);
+            showNormal();
+        }
+    });
 }
 
 void MainWindow::createDockWindows()
