@@ -7,6 +7,7 @@
 #include <QStackedWidget>
 #include <QVBoxLayout>
 #include <QHBoxLayout>
+#include "CustomView/AudioView.h"
 class MainView : public QWidget
 {
     Q_OBJECT
@@ -22,11 +23,14 @@ private:
     void initLayout();
     QVBoxLayout *m_mainlayout;
     QHBoxLayout *m_buttonlayout;
+    QVBoxLayout *mainlayout;
     QStackedWidget *m_mainStackedWidget;
     QPushButton *m_textviewButton;
     QPushButton *m_audioviewButton;
     QPushButton *m_videoviewButton;
     QPushButton *m_cameraviewButton;
+
+    AudioView *m_audioview;
 };
 
 #endif // MAINVIEW_H

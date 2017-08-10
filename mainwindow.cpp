@@ -149,7 +149,8 @@ void MainWindow::createToolBar()
     m_searchLineEdit = new SearchLineEdit(this);
     m_searchLineEdit->setFixedWidth(200);
     m_mainToolBar->addWidget(m_searchLineEdit);
-    m_toggleFullScreen2Action = new QAction(QIcon(":/Basic/full-screen.png"), QString(""), this);
+    m_toggleFullScreen2Action = new QAction(this);
+    m_toggleFullScreen2Action->setIcon(QIcon(":/Basic/full-screen.png"));
     m_mainToolBar->addAction(m_toggleFullScreen2Action);
     connect(m_toggleFullScreen2Action, &QAction::triggered, [=]() {
         if(windowState()!=Qt::WindowFullScreen) {

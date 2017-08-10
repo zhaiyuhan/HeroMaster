@@ -12,5 +12,11 @@
         <file>Basic/slider_thumb_pressed.png</file>
         <file>Basic/search.png</file>
         <file>Basic/full-screen.png</file>
+        <file>Basic/radiobutton_unchecked.png</file>
+        <file>Basic/radiobutton_unchecked_hover.png</file>
+        <file>Basic/radiobutton_unchecked_pressed.png</file>
+        <file>Basic/radiobutton_checked.png</file>
+        <file>Basic/radiobutton_checked_hover.png</file>
+        <file>Basic/radiobutton_checked_pressed.png</file>
     </qresource>
 </RCC>

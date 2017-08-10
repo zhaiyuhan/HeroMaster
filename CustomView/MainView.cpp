@@ -16,6 +16,8 @@ void MainView::setupUI()
     m_cameraviewButton = new QPushButton("Camera View", this);
     m_cameraviewButton->setFixedSize(150, 30);
     m_mainStackedWidget = new QStackedWidget(this);
+    m_audioview = new AudioView(this);
+    m_mainStackedWidget->addWidget(m_audioview);
 }
 
 void MainView::initView()
@@ -37,5 +39,5 @@ void MainView::initLayout()
     m_buttonlayout->addWidget(m_textviewButton);
     m_buttonlayout->addWidget(m_audioviewButton);
     m_buttonlayout->addWidget(m_videoviewButton);
-    m_buttonlayout->addWidget(m_cameraviewButton);
+    m_buttonlayout->addWidget(m_cameraviewButton);    
 }

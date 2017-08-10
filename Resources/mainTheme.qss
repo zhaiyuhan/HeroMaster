@@ -484,8 +484,9 @@ QSlider::sub-page:horizontal {
 
 QLineEdit {
   border-radius: 4px;
-  border: 1px solid qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 #439cf3, stop:0.25 #439cf3, stop:0.5 #439cf3, stop:1 #439cf3);;
-  background-color: rgba(56 ,69, 82, 100%);
+  border: 1px solid qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 #439cf3, stop:0.25 #439cf3, stop:0.5 #439cf3, stop:1 #439cf3);
+  ;
+  background-color: rgba(56, 69, 82, 100%);
   color: white;
 }
 
@@ -493,8 +494,46 @@ QLineEdit:enabled {
   color: white;
 }
 
-QLineEdit:enabled:hover, QLineEdit:enabled:focus {
+QLineEdit:enabled:hover, QLineEdit:enabled:focus {}
+
+QLineEdit:!enabled {}
+
+QRadioButton::indicator {
+  width: 20px;
+  height: 22px;
 }
 
-QLineEdit:!enabled {
+QRadioButton::indicator::unchecked {
+  image: url(:/Basic/radiobutton_unchecked.png);
+}
+
+QRadioButton::indicator:unchecked:hover {
+  image: url(:/Basic/radiobutton_unchecked_hover.png);
+}
+
+QRadioButton::indicator:unchecked:pressed {
+  image: url(:/Basic/radiobutton_unchecked_pressed.png);
+}
+
+QRadioButton::indicator::checked {
+  image: url(:/Basic/radiobutton_checked.png);
+}
+
+QRadioButton::indicator:checked:hover {
+  image: url(:/Basic/radiobutton_checked_hover.png);
+}
+
+QRadioButton::indicator:checked:pressed {
+  image: url(:/Basic/radiobutton_checked_pressed.png);
+}
+
+QProgressBar {
+  border: 1px solid qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 #439cf3, stop:0.25 #439cf3, stop:0.5 #439cf3, stop:1 #439cf3);
+  border-radius: 5px;
+  text-align: center;
+}
+
+QProgressBar::chunk {
+  background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 #439cf3, stop:0.25 #439cf3, stop:0.5 #439cf3, stop:1 #439cf3);
+  width: 20px;
 }

@@ -28,7 +28,7 @@ void PlaneForAudioPlane::initLayout()
     m_mainlayout->addWidget(nextButton);
     m_mainlayout->addWidget(volumeSlider);
     m_mainlayout->addWidget(ImageButton);
-    gridlayout = new QGridLayout(this);
+    gridlayout = new QGridLayout();
     m_mainlayout->addLayout(gridlayout);
     currenttimeLabel->setText(QString("CurrentTime"));
     titleLabel->setText(QString("Title"));

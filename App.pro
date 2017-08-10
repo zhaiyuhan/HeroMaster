@@ -39,7 +39,9 @@ SOURCES += \
     CustomView/Plane/PlaneForVideoView.cpp \
     CustomView/Plane/PlaneForCameraView.cpp \
     Foundation/SearchLineEdit.cpp \
-    CustomView/AudioView.cpp
+    CustomView/AudioView.cpp \
+    CustomView/Plane/FullViewPlane.cpp \
+    Foundation/EQValizer.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -56,7 +58,9 @@ HEADERS += \
     CustomView/Plane/PlaneForVideoView.h \
     CustomView/Plane/PlaneForCameraView.h \
     Foundation/SearchLineEdit.h \
-    CustomView/AudioView.h
+    CustomView/AudioView.h \
+    CustomView/Plane/FullViewPlane.h \
+    Foundation/EQValizer.h
 
 
 RESOURCES += \
@@ -68,3 +72,5 @@ RESOURCES += \
 FORMS += \
     View/AboutView/AboutView.ui \
     View/HelpView.ui
+
+DISTFILES +=
