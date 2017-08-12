@@ -19,5 +19,9 @@
         <file>Basic/radiobutton_checked_hover.png</file>
         <file>Basic/radiobutton_checked_pressed.png</file>
         <file>Basic/pause.png</file>
+        <file>Basic/TextView/new-file.png</file>
+        <file>Basic/TextView/icon_file_open.png</file>
+        <file>Basic/TextView/save-file-option.png</file>
+        <file>Basic/TextView/ic_content_copy_white_36dp.png</file>
     </qresource>
 </RCC>

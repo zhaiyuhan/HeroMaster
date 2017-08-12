@@ -12,6 +12,7 @@
 #include <QMediaPlaylist>
 
 #include <QUrl>
+
 class PlaneForAudioPlane : public QWidget
 {
 public:

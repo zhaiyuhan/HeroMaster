@@ -13,6 +13,7 @@ MainWindow::MainWindow(QWidget *parent)
     }
     initUI();
     initEvents();
+    setWindowFlags(Qt::FramelessWindowHint);
 }
 
 MainWindow::~MainWindow()

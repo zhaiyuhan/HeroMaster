@@ -537,3 +537,14 @@ QProgressBar::chunk {
   background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 #439cf3, stop:0.25 #439cf3, stop:0.5 #439cf3, stop:1 #439cf3);
   width: 20px;
 }
+
+QToolButton {
+  border: 0px;
+  background-color: transparent;
+  font-size: 12px;
+}
+
+QToolButton:hover {
+  border: 1px solid;
+  border-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 #439cf3, stop:0.25 #439cf3, stop:0.5 #439cf3, stop:1 #439cf3);
+}
