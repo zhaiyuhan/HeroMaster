@@ -5,6 +5,12 @@ ControlPlaneView::ControlPlaneView(QWidget *parent) : QWidget(parent)
     initUI();
     connect(m_selectplaneComboBox, SIGNAL(currentIndexChanged(int)), m_mainStackedWidget, SLOT(setCurrentIndex(int)));
 }
+
+void ControlPlaneView::playmusic(QString _filename)
+{
+    m_PlaneForAudioPlane->setFileName(_filename);
+}
+
 void ControlPlaneView::setupUI()
 {    
     m_mainStackedWidget = new QStackedWidget(this);

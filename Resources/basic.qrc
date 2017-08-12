@@ -18,5 +18,6 @@
         <file>Basic/radiobutton_checked.png</file>
         <file>Basic/radiobutton_checked_hover.png</file>
         <file>Basic/radiobutton_checked_pressed.png</file>
+        <file>Basic/pause.png</file>
     </qresource>
 </RCC>

@@ -9,6 +9,9 @@
 #include <QMenuBar>
 #include <QMenu>
 #include <QStatusBar>
+
+#include <QFileDialog>
+
 #include <QPushButton>
 #include <QLabel>
 #include <QActionGroup>
@@ -30,12 +33,15 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    MainWindow(QWidget *parent = 0);
+    explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
 
+private slots:
+    void openFile();
 private:
-    void setupUI();
+    void setupUI();    
     void initUI();
+    void initEvents();
     void createActions();
     void createMenus();
     void createToolBar();

@@ -12,11 +12,20 @@ MainWindow::MainWindow(QWidget *parent)
         maintheme.close();
     }
     initUI();
+    initEvents();
 }
 
 MainWindow::~MainWindow()
 {
 
+}
+
+void MainWindow::openFile()
+{
+    QString fileName = QFileDialog::getOpenFileName(this, tr("Open File"),
+                                                      "/home",
+                                                      tr("Music File (*.mp3)"));
+    m_controlPlaneView->playmusic(fileName);
 }
 
 void MainWindow::setupUI()
@@ -44,6 +53,11 @@ void MainWindow::initUI()
     QDesktopWidget *desktop = QApplication::desktop();
     move((desktop->width()-this->width())/2,(desktop->height()-this->height())/2);
     setupUI();
+}
+
+void MainWindow::initEvents()
+{
+    connect(m_openfileAction, &QAction::triggered, [=] { openFile(); });
 }
 
 void MainWindow::createActions()

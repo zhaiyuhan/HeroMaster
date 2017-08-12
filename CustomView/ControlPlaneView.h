@@ -16,9 +16,7 @@ class ControlPlaneView : public QWidget
 public:
     explicit ControlPlaneView(QWidget *parent = nullptr);
 
-signals:
-
-public slots:
+    void playmusic(QString _filename);
 
 private:
     void setupUI();
