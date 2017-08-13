@@ -4,6 +4,8 @@
 #include <QWidget>
 #include <QToolButton>
 #include <QHBoxLayout>
+#include <QMdiArea>
+#include <QMdiSubWindow>
 class PlaneForTextView : public QWidget
 {
     Q_OBJECT

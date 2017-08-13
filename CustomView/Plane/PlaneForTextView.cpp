@@ -3,6 +3,7 @@
 PlaneForTextView::PlaneForTextView(QWidget *parent) : QWidget(parent)
 {
     initUI();
+
 }
 
 void PlaneForTextView::setupUI()

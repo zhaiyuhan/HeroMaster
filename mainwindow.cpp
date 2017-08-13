@@ -13,7 +13,8 @@ MainWindow::MainWindow(QWidget *parent)
     }
     initUI();
     initEvents();
-    setWindowFlags(Qt::FramelessWindowHint);
+    //setWindowFlags(Qt::FramelessWindowHint);
+    m_titlebar = new TitleBar(this);
 }
 
 MainWindow::~MainWindow()
@@ -27,6 +28,13 @@ void MainWindow::openFile()
                                                       "/home",
                                                       tr("Music File (*.mp3)"));
     m_controlPlaneView->playmusic(fileName);
+}
+
+void MainWindow::resizeEvent(QResizeEvent *event)
+{
+    Q_UNUSED(event);
+    //m_titlebar->move(0, 0);
+    //m_titlebar->resize(event->size().width(), 30);
 }
 
 void MainWindow::setupUI()
@@ -111,6 +119,10 @@ void MainWindow::createActions()
     connect(m_toggleFullScreenAction, &QAction::toggled, [=]() { if(m_toggleFullScreenAction->isChecked()) showFullScreen(); m_lastwindowstate = LastWindowState::L_FULLSCREEN; });
     m_normalAction->setChecked(true);
 
+    //windowmenu
+    m_frameless = new QAction("Frameless");
+    m_frameless->setStatusTip(QString("Framless"));
+
     //helpmenu
     m_openhelpAction = new QAction("Help");
     m_openhelpAction->setStatusTip(QString("Open the help view"));
@@ -143,6 +155,10 @@ void MainWindow::createMenus()
     m_viewMenu->addAction(m_minminizedAction);
     m_viewMenu->addAction(m_normalAction);
     m_viewMenu->addAction(m_toggleFullScreenAction);
+
+    m_windowMenu = new QMenu("Window", this);
+    m_mainMenuBar->addMenu(m_windowMenu);
+    m_windowMenu->addAction(m_frameless);
 
     m_helpMenu = new QMenu("Help", this);
     m_mainMenuBar->addMenu(m_helpMenu);

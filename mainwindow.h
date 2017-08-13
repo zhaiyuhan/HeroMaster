@@ -28,6 +28,7 @@
 #include "CustomView/Plane/OutPutPlane.h"
 #include "CustomView/Plane/InformationPlane.h"
 #include "Foundation/SearchLineEdit.h"
+#include "Foundation/TitleBar.h"
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
@@ -38,6 +39,8 @@ public:
 
 private slots:
     void openFile();
+protected:
+    virtual void resizeEvent(QResizeEvent *event);
 private:
     void setupUI();    
     void initUI();
@@ -46,6 +49,8 @@ private:
     void createMenus();
     void createToolBar();
     void createDockWindows();
+
+    TitleBar *m_titlebar;
 
     QMenuBar *m_mainMenuBar;    
     QMenu *m_fileMenu;
@@ -60,6 +65,9 @@ private:
     QAction *m_minminizedAction;
     QAction *m_normalAction;
     QAction *m_toggleFullScreenAction;
+
+    QMenu *m_windowMenu;
+    QAction *m_frameless;
 
     QMenu *m_helpMenu;
     QAction *m_openhelpAction;

@@ -35,14 +35,17 @@ SOURCES += \
     CustomView/Plane/OutPutPlane.cpp \
     CustomView/Plane/InformationPlane.cpp \
     CustomView/ControlPlaneView.cpp \
-    CustomView/Plane/PlaneForTextView.cpp \
     CustomView/Plane/PlaneForAudioPlane.cpp \
     CustomView/Plane/PlaneForVideoView.cpp \
     CustomView/Plane/PlaneForCameraView.cpp \
+    CustomView/Plane/PlaneForTextView.cpp \
     Foundation/SearchLineEdit.cpp \
     CustomView/AudioView.cpp \
     CustomView/Plane/FullViewPlane.cpp \
-    Foundation/EQValizer.cpp
+    Foundation/EQValizer.cpp \
+    Foundation/TitleBar.cpp \
+    CustomView/TextView.cpp \
+    Foundation/CustomMidSubWindow.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -61,7 +64,10 @@ HEADERS += \
     Foundation/SearchLineEdit.h \
     CustomView/AudioView.h \
     CustomView/Plane/FullViewPlane.h \
-    Foundation/EQValizer.h
+    Foundation/EQValizer.h \
+    Foundation/TitleBar.h \
+    CustomView/TextView.h \
+    Foundation/CustomMidSubWindow.h
 
 
 RESOURCES += \

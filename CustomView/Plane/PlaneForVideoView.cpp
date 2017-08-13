@@ -4,3 +4,5 @@ PlaneForVideoView::PlaneForVideoView(QWidget *parent) : QWidget(parent)
 {
 
 }
+
+
