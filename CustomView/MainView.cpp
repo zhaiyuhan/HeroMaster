@@ -3,6 +3,7 @@
 MainView::MainView(QWidget *parent) : QWidget(parent)
 {
     initView();
+    initEvents();
 }
 
 void MainView::setupUI()
@@ -41,5 +42,12 @@ void MainView::initLayout()
     m_buttonlayout->addWidget(m_textviewButton);
     m_buttonlayout->addWidget(m_audioviewButton);
     m_buttonlayout->addWidget(m_videoviewButton);
-    m_buttonlayout->addWidget(m_cameraviewButton);    
+    m_buttonlayout->addWidget(m_cameraviewButton);
+}
+
+void MainView::initEvents()
+{
+    connect(m_textviewButton, &QPushButton::clicked, [=]() { m_mainStackedWidget->setCurrentWidget(m_textview); });
+    connect(m_audioviewButton, &QPushButton::clicked, [=]() { m_mainStackedWidget->setCurrentWidget(m_audioview); });
+
 }

@@ -23,5 +23,13 @@
         <file>Basic/TextView/icon_file_open.png</file>
         <file>Basic/TextView/save-file-option.png</file>
         <file>Basic/TextView/ic_content_copy_white_36dp.png</file>
+        <file>Basic/TextView/ic_content_paste_white_36dp.png</file>
+        <file>Basic/TextView/ic_delete_white_36dp.png</file>
+        <file>Basic/TextView/ic_print_white_36dp.png</file>
+        <file>Basic/TextView/ic_undo_white_36dp.png</file>
+        <file>Basic/VideoView/ic_play_arrow_white_48dp.png</file>
+        <file>Basic/VideoView/ic_volume_up_white_36dp.png</file>
+        <file>Basic/VideoView/ic_fullscreen_white_36dp.png</file>
+        <file>Basic/VideoView/ic_list_white_36dp.png</file>
     </qresource>
 </RCC>

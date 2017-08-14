@@ -22,6 +22,7 @@ private:
     void setupUI();
     void initView();
     void initLayout();
+    void initEvents();
     QVBoxLayout *m_mainlayout;
     QHBoxLayout *m_buttonlayout;
     QVBoxLayout *mainlayout;

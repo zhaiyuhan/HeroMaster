@@ -4,6 +4,8 @@
 #include <QWidget>
 #include <QToolButton>
 #include <QHBoxLayout>
+#include <QFontComboBox>
+#include <QSpinBox>
 #include <QMdiArea>
 #include <QMdiSubWindow>
 class PlaneForTextView : public QWidget
@@ -25,7 +27,12 @@ private:
     QToolButton *m_openfileToolButton;
     QToolButton *m_savefileToolButton;
     QToolButton *m_copyToolButton;
-
+    QToolButton *m_pasteToolButton;
+    QToolButton *m_deleteButton;
+    QToolButton *m_printButton;
+    QToolButton *m_undoButton;
+    QFontComboBox *m_fontgroupComboBox;
+    QSpinBox *m_fontsizeSpinBox;
 };
 
 #endif // PLANEFORTEXTVIEW_H
