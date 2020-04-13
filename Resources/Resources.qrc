@@ -1,0 +1,28 @@
+<RCC>
+    <qresource prefix="MenuBar">
+        <file>setting.svg</file>
+    </qresource>
+    <qresource prefix="ToolButton">
+        <file>ToolBar_OpenFile.png</file>
+        <file>ToolBar_NewFile.png</file>
+    </qresource>
+    <qresource prefix="AppIcon">
+        <file>mainTheme.qss</file>
+        <file>king.png</file>
+        <file>resizebottomright.svg</file>
+    </qresource>
+    <qresource prefix="TextView">
+        <file>icon_copy.png</file>
+        <file>icon_delete.png</file>
+        <file>icon_file_open.png</file>
+        <file>icon_new_file.png</file>
+        <file>icon_paste.png</file>
+        <file>icon_print.png</file>
+        <file>icon_undo.png</file>
+        <file>icon_file_open.png</file>
+    </qresource>
+    <qresource prefix="DockWidget">
+        <file>DockWidget_Close.svg</file>
+        <file>DockWidget_Resize.svg</file>
+    </qresource>
+</RCC>

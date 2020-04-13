@@ -1,6 +1,0 @@
-<RCC>
-    <qresource prefix="/">
-        <file>DockWidget/close.png</file>
-        <file>DockWidget/conow-resizefull.png</file>
-    </qresource>
-</RCC>

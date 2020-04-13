@@ -1,19 +1,15 @@
-QWidget {
-  color: #eff0f1;
-  background-color: #29323b;
-  selection-background-color: #3daee9;
-  selection-color: #eff0f1;
-  background-clip: border;
-  border-image: none;
-  outline: 0;
+QMainWindow {
+  background-color:#2d2d30;
+  color:#f1f1f1;
 }
 
-QWidget#centerWidget {
-  background-color: #15191e;
+QSizeGrip {
+  image: url(:/AppIcon/resizebottomright.svg);
 }
 
+}
 QStackedWidget {
-  background-color: #15191e;
+  background-color: #333333;
   border-radius: 10px;
 }
 
@@ -23,16 +19,18 @@ QStackedWidget#controlplane {
 }
 
 QDockWidget {
+  color: #CCCCCC;
   border: 1px solid;
   border-color: #15191e;
-  titlebar-close-icon: url(:/DockWidget/close.png);
-  titlebar-normal-icon: url(:/DockWidget/conow-resizefull.png);
+  background-color: #121212;
+  titlebar-close-icon: url(:/DockWidget/DockWidget_Close.svg);
+  titlebar-normal-icon: url(:/DockWidget/DockWidget_Resize.svg);
 }
 
 QDockWidget::title {
   text-align: left;
   padding-left: 5px;
-  background-color: #2d3842;
+  background-color: #333333;
 }
 
 QDockWidget::close-button, QDockWidget::float-button {
@@ -74,15 +72,16 @@ QPushButton:disabled {
 }
 
 QMenuBar {
-  background-color: #232c33;
+  background-color: #333333;
   border: 1px solid 1519e;
 }
 
 QMenuBar::item {
   padding: 5px 10px 5px 10px;
-  spacing: 3px;
+  spacing: 10px;
   background: transparent;
   border-radius: 4px;
+  color: #999999;
 }
 
 QMenuBar::item:enabled {
@@ -98,7 +97,8 @@ QMenuBar::item:enabled:selected {
 }
 
 QMenu {
-  background-color: #232c33;
+  color: #CCCCCC;
+  background-color: #333333;
   border: 1px solid 1519e;
 }
 
@@ -131,9 +131,26 @@ QMenu::icon {
   padding-right: 2px;
 }
 
+QToolBar {
+   border: 1px solid #212121;
+   background-color: #333333;
+   color: #CCCCCC;
+}
+
 QToolBar::handle {
   image: none;
 }
+
+QToolButton {
+  background:#2d2d30;
+  color:#f1f1f1;
+}
+
+QToolButton:pressed {
+  border: 1px solid #007acc;
+  background:#3e3e42;
+}
+
 
 QTextBrowser {
   background-color: #384552;
