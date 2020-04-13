@@ -1,0 +1,35 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Basic/play.png</file>
+        <file>mainTheme.qss</file>
+        <file>iconfont.ico</file>
+        <file>king.png</file>
+        <file>psd.jpg</file>
+        <file>Basic/previous.png</file>
+        <file>Basic/next.png</file>
+        <file>Basic/slider_thumb.png</file>
+        <file>Basic/slider_thumb_hover.png</file>
+        <file>Basic/slider_thumb_pressed.png</file>
+        <file>Basic/search.png</file>
+        <file>Basic/full-screen.png</file>
+        <file>Basic/radiobutton_unchecked.png</file>
+        <file>Basic/radiobutton_unchecked_hover.png</file>
+        <file>Basic/radiobutton_unchecked_pressed.png</file>
+        <file>Basic/radiobutton_checked.png</file>
+        <file>Basic/radiobutton_checked_hover.png</file>
+        <file>Basic/radiobutton_checked_pressed.png</file>
+        <file>Basic/pause.png</file>
+        <file>Basic/TextView/new-file.png</file>
+        <file>Basic/TextView/icon_file_open.png</file>
+        <file>Basic/TextView/save-file-option.png</file>
+        <file>Basic/TextView/ic_content_copy_white_36dp.png</file>
+        <file>Basic/TextView/ic_content_paste_white_36dp.png</file>
+        <file>Basic/TextView/ic_delete_white_36dp.png</file>
+        <file>Basic/TextView/ic_print_white_36dp.png</file>
+        <file>Basic/TextView/ic_undo_white_36dp.png</file>
+        <file>Basic/VideoView/ic_play_arrow_white_48dp.png</file>
+        <file>Basic/VideoView/ic_volume_up_white_36dp.png</file>
+        <file>Basic/VideoView/ic_fullscreen_white_36dp.png</file>
+        <file>Basic/VideoView/ic_list_white_36dp.png</file>
+    </qresource>
+</RCC>
